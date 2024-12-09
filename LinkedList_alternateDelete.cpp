@@ -1,51 +1,39 @@
+//ARIFUL_HRIDOY
+
 #include<iostream>
 using namespace std;
 
-class Node
-{
+class Node{
 public :
     int data;
     Node* next;
 
-    Node(int v)
-    {
+    Node(int v) {
         data = v;
-        next = NULL;
-    }
-
+        next = NULL; }
 };
 
-class LinkedList
-{
+class LinkedList{
 public :
     Node* head;
+    LinkedList() { head = NULL; }
 
-    LinkedList()
-    {
-        head = NULL;
-    }
     void llinsert(int x)
-    {
+{
         Node* newNode = new Node(x);
-
-        if(head==NULL)
-        {
+        if(head==NULL) {
             head = newNode;
             return;
         }
         Node* temp = head;
-
-        while(temp->next!=NULL)
-        {
+        while(temp->next!=NULL) {
             temp = temp->next;
         }
         temp->next = newNode;
-    }
+}
 
-    void display()
-    {
+    void display() {
         Node* temp = head;
-
         while(temp!=NULL)
     {
         cout<<temp->data<<" ";
