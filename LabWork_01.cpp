@@ -1,5 +1,10 @@
-//ARIFUL_HRIDOY
-//2207051
+// ARIFUL_HRIDOY
+// 2207051
+// At first create a structure CT_mark.
+// It will have two values – roll, mark.
+// You will insert these values in the linked list.
+// Your linked list should be sorted  by marks after each insertion.
+// If two students get same mark, student with smaller roll should be come first in the list.
 
 #include<iostream>
 using namespace std;
