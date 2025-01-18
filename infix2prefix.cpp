@@ -22,14 +22,10 @@ string infix2postfix(stack<char> &s, const string& infix)
     for(int i=0; i<infix.length(); i++)
     {
         char c=infix[i];
-        if(isalnum(c))
-        {
-            prefix+=c;
-        }
-        else if(c=='(')
-        {
-            s.push(c);
-        }
+
+        if(isalnum(c)) prefix+=c;
+        else if(c=='(') s.push(c);
+
         else if(c==')')
         {
             while((s.top()!='(') && (!s.empty()))
@@ -60,7 +56,6 @@ string infix2postfix(stack<char> &s, const string& infix)
 int main()
 {
     ios::sync_with_stdio(false);
-
     string infix,prefix;
     cin>>infix;
     stack <char> s;
@@ -71,12 +66,10 @@ int main()
         if(infix[i]=='(') infix[i]=')';
         else if(infix[i]==')') infix[i]='(';
     }
+
     prefix=infix2postfix(s,infix);
     reverse(prefix.begin(),prefix.end());
-
 
     cout<<prefix<<endl;
     return 0;
 }
-
-
