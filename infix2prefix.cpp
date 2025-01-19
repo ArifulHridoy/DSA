@@ -16,7 +16,7 @@ int precedence(char c)
     else return -1;
 }
 
-string infix2postfix(stack<char> &s, const string& infix)
+string infix2prefix(stack<char> &s, const string& infix)
 {
     string prefix;
     for(int i=0; i<infix.length(); i++)
@@ -67,7 +67,7 @@ int main()
         else if(infix[i]==')') infix[i]='(';
     }
 
-    prefix=infix2postfix(s,infix);
+    prefix=infix2prefix(s,infix);
     reverse(prefix.begin(),prefix.end());
 
     cout<<prefix<<endl;
